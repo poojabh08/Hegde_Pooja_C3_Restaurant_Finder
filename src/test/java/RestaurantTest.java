@@ -71,8 +71,8 @@ class RestaurantTest {
     @Test
     public void calculate_amount_should_return_zero_when_there_is_no_selected_items() {
         mockRestaurant();
-        List<Item> items = new ArrayList<>();
-        assertEquals(0, restaurant.calculateAmount(items));
+        List<String> mockItems = new ArrayList<>();
+        assertEquals(0, restaurant.calculateAmount(mockItems));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<ORDER COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
