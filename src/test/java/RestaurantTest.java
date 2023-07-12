@@ -74,5 +74,23 @@ class RestaurantTest {
         List<String> mockItems = new ArrayList<>();
         assertEquals(0, restaurant.calculateAmount(mockItems));
     }
+
+
+    @Test
+    public void calculate_amount_should_return_expected_amount_when_there_is_one_selected_items() {
+        mockRestaurant();
+        List<String> selectedItems = Arrays.asList("Sweet corn soup");
+        assertEquals(119, restaurant.calculateAmount(selectedItems));
+
+    }
+
+    @Test
+    public void calculate_amount_should_return_expected_amount_when_there_is_multiple_selected_items() {
+        mockRestaurant();
+        List<String> selectedItems = Arrays.asList("Sweet corn soup", "Vegetable lasagne");
+        assertEquals(388, restaurant.calculateAmount(selectedItems));
+
+    }
+
     //<<<<<<<<<<<<<<<<<<<<<<<ORDER COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
