@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.mockito.Spy;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.time.LocalTime;
 
@@ -64,4 +66,13 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void calculate_amount_should_return_zero_when_there_is_no_selected_items() {
+        mockRestaurant();
+        List<Item> items = new ArrayList<>();
+        assertEquals(0, restaurant.calculateAmount(items));
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
